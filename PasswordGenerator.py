@@ -1,7 +1,11 @@
 import requests
 from csv import reader
 
-url = "https://www.dinopass.com/password/strong"
+### Simple Passwords ###
+url = "https://www.dinopass.com/password/simple"
+
+### Strong Passwords ###
+#url = "https://www.dinopass.com/password/strong"
 
 # open file in read mode
 with open('users.csv', 'r') as read_obj:
@@ -13,4 +17,4 @@ with open('users.csv', 'r') as read_obj:
         resp = requests.get(url)
         password = resp.content.decode("utf-8")
         user = row[0]
-        print(user + ',' + password)
+        print(password)
